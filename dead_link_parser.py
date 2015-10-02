@@ -1,7 +1,6 @@
+from bs4 import BeautifulSoup
+
+
 if __name__ == '__main__':
-    try:
-        f = open('wiki.ubuntu.com_Lubuntu.html', 'rb')
-        html_doc = f.read()
-        print(html_doc)
-    except Exception, e:
-        print("error", e)
+    soup = BeautifulSoup(open('wiki.ubuntu.com_Lubuntu.html'), 'html.parser')
+    print(soup.prettify())
